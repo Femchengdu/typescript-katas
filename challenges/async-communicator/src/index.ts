@@ -1,7 +1,13 @@
 import { expectType } from "tsd";
 
 // IMPLEMENT THIS TYPE
-export type WrapForPenpal<T> = any;
+export type WrapForPenpal<T> = {
+  [P in keyof T]: T[P] extends { (...args: infer Args): infer R } // Value is a method or anything callable
+  ? R extends Promise<any> // I inferred return a Promise
+  ? (...args: Args) => R // Return function signature 
+  : (...args: Args) => Promise<R> // Result should be wrapped in a promise
+  : never
+};
 
 /**
  * Test Scenario - Do not change anything below this line
@@ -14,6 +20,7 @@ const methods = {
     return a - b;
   },
 };
+
 const asyncMethods: WrapForPenpal<typeof methods> = {} as any;
 
 let addPromise = asyncMethods.add(1, 2);
