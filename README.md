@@ -1,9 +1,4 @@
-# Making TypeScript Stick [![CI](https://github.com/mike-north/making-typescript-stick/actions/workflows/ci.yml/badge.svg)](https://github.com/mike-north/making-typescript-stick/actions/workflows/ci.yml)
-
-Mike North's "Making TypeScript Stick" course.
-
-- **Course Video:** [Making TypeScript Stick | Frontend Masters](https://frontendmasters.com/workshops/typescript-practice/)
-- **Course Website:** [Making TypeScript Stick](https://www.typescript-training.com/course/making-typescript-stick)
+# Practicing with Mike North's "Making TypeScript Stick" course.
 
 ## Setup
 
